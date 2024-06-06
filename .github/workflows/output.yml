@@ -1,0 +1,11 @@
+name: Output excercise
+on: issues
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Output
+        run: echo "${{ toJson(github.event.issue)}}"
